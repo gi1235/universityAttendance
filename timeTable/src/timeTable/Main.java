@@ -25,49 +25,16 @@ public class Main {
             }
         }
         
-
         for(int i = 0 ; i < addTime.size() ; i++){
             // 예외처리 : 해당교과목이 중복인지, 해당 시간이 빈 시간인지 공강일 검사
             if(timeTable[0][addTime.get(i).getTime()].equals("0") && dayoff.contains(addTime.get(i).getWeek()) && !checkName(timeTable, addTime.get(i).getName())){
                 continue;
             }
-            switch (addTime.get(i).getWeek()) {
-                case "월":
-                    for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
-                        timeTable[0][j] = addTime.get(i).getName();
-                    }
-                    break;
-
-                case "화": 
-                    for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
-                        timeTable[1][j] = addTime.get(i).getName();
-                    }
-                    break;
-                
-                case "수":
-                    for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
-                        timeTable[2][j] = addTime.get(i).getName();
-                    }
-                    break;
-                
-                case "목":
-                    for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
-                        timeTable[3][j] = addTime.get(i).getName();
-                    }
-                    break;
-                
-                case "금":
-                    for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
-                        timeTable[4][j] = addTime.get(i).getName();
-                    }
-                    break;
-                    
-                default:
-                    break;
+            int week = "월화수목금".indexOf(addTime.get(i).getWeek());
+            for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
+                timeTable[week][j] = addTime.get(i).getName();
             }
-            
-            
-        }
+         }
 
         for(int i=0 ; i <timeTable.length ; i++){
             for(int j=0 ; j <timeTable[0].length; j++){

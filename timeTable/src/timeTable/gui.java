@@ -13,12 +13,13 @@ public class gui extends JFrame{
     JTextField dayoffText;
     JTextField[] addText = new JTextField[4];
     String[] str = {"과목명 :", "요일 ㅣ", "시간 :", "학점 :"};
+    
     gui(){
         setTitle("시간표");
         setSize(600, 808);
+        setResizable(false);
         north();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Main.dayoff.add("화");
         setVisible(true);
     }
 
@@ -44,6 +45,12 @@ public class gui extends JFrame{
         mainPanel.add(panel2);
 
         add("North", mainPanel);
+
+    }
+
+    void centor(){
+        JPanel panel = new JPanel(new GridLayout(10, 6));
+        panel.add(new JLabel());
 
     }
 }
