@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Main {
-    static ArrayList<universiryTime> addTime = new ArrayList<>();
+    static ArrayList<universityTime> addTime = new ArrayList<>();
     static ArrayList<String> dayoff = new ArrayList<>();
     static String[][] timeTable = new String[5][9];
 
@@ -40,12 +40,12 @@ public class Main {
 
     public static void changeTimeTable(){
         for(int i = 0 ; i < addTime.size() ; i++){
-            universiryTime nowAdd = addTime.get(i);
+            universityTime nowAdd = addTime.get(i);
+            int week = "월화수목금".indexOf(nowAdd.getWeek());
             // 예외처리 : 해당교과목이 중복인지, 해당 시간이 빈 시간인지 공강일 검사
-            if(timeTable[0][nowAdd.getTime()].equals("0") && dayoff.contains(nowAdd.getWeek()) && !checkName(timeTable, nowAdd.getName())){
+            if(!timeTable[week][nowAdd.getTime()-1].equals("0") || dayoff.contains(nowAdd.getWeek()) || checkName(timeTable, nowAdd.getName())){
                 continue;
             }
-            int week = "월화수목금".indexOf(nowAdd.getWeek());
             for(int j = nowAdd.getTime() - 1 ; j < (nowAdd.getTime()-1) + nowAdd.getCredit() ; j++ ){
                 timeTable[week][j] = nowAdd.getName();
             }
