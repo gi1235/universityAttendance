@@ -1,11 +1,12 @@
 package timeTable;
 
 public class universiryTime {
-    private String name;
+    private String name, week;
     private int time, credit;
 
-    universiryTime(String name, int time, int credit){
+    universiryTime(String name, String week, int time, int credit){
         this.name = name;
+        this.week = week;
         this.time = time;
         this.credit = credit;
     }
@@ -20,6 +21,10 @@ public class universiryTime {
 
     public int getCredit(){
         return credit;
+    }
+
+    public String getWeek(){
+        return week;
     }
     
 }
