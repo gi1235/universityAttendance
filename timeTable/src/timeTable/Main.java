@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args){
         String myTimeTable = "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0";
-        gui gui = new gui();
+        
         // 요일을 행 시간을 열로 배치
         dayoff.add("월");
         addTime.add(new universiryTime("math","월" , 3, 3));
@@ -30,7 +30,7 @@ public class Main {
             if(timeTable[0][addTime.get(i).getTime()].equals("0") && dayoff.contains(addTime.get(i).getWeek()) && !checkName(timeTable, addTime.get(i).getName())){
                 continue;
             }
-            int week = "월화수목금".indexOf(addTime.get(i).getWeek());
+            int week = "월화수목금".indexOf(addTime.get(i).getWeek())-1;
             for(int j = addTime.get(i).getTime() - 1 ; j < (addTime.get(i).getTime()-1) + addTime.get(i).getCredit() ; j++ ){
                 timeTable[week][j] = addTime.get(i).getName();
             }
@@ -42,7 +42,7 @@ public class Main {
             }
             System.out.println();
         }
-
+        gui gui = new gui();
     }
 
     public static boolean checkName(String[][] timeTable, String name){
@@ -55,4 +55,5 @@ public class Main {
         }
         return false;
     }
+
 }
