@@ -22,11 +22,11 @@ package timeTable;
  * </ul>
  */
 
-public class universityTime {
+public class UniversityTime {
     private String name, week;
     private int time, credit;
 
-    universityTime(String name, String week, int time, int credit){
+    UniversityTime(String name, String week, int time, int credit){
         this.name = name;
         this.week = week;
         this.time = time;
