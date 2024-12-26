@@ -31,8 +31,7 @@ public class Main {
     static String[][] timeTable = new String[5][9];
 
     public static void main(String[] args){
-        String myTimeTable = "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0";
-        StringTokenizer tk = new StringTokenizer(myTimeTable, ", ");
+        StringTokenizer tk = new StringTokenizer(timeTableIO.loadF(), ", ");
 
         for(int i=0 ; i <timeTable.length ; i++){
             for(int j=0 ; j <timeTable[0].length; j++){

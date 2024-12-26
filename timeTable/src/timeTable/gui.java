@@ -139,7 +139,7 @@ public class gui extends JFrame implements ActionListener{
      * @param name 수업의 이름
      * @param week 수업이 진행되는 요일 (월화수목금 중 하나)
      * @param credit 수업의 학점
-     * @param time 수업 시간 (1부터 5까지의 교시 중 하나)
+     * @param time 수업 시간 (1부터 9까지의 교시 중 하나)
      * 
      * @throws Exception  시간, 학점의 입력값이 숫자가 아닐경우
      * 
@@ -159,7 +159,7 @@ public class gui extends JFrame implements ActionListener{
                 String week = addText[1].getText();
                 int time = Integer.parseInt(addText[2].getText());
                 int credit = Integer.parseInt(addText[3].getText());
-                if(isKorean(name) && "월화수목금".contains(week) && week.length()==1 && (time+credit-1) <= 9 ){
+                if(isKorean(name) && "월화수목금".contains(week) && week.length()==1 && (time+credit-1) <= 9 && credit > 0){
                     Main.addTime.add(new universityTime(name, week, time, credit));
                     JOptionPane.showMessageDialog(this, "수업이 정상적으로 추가되었습니다.", "알람", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -194,7 +194,7 @@ public class gui extends JFrame implements ActionListener{
      /**
      * 입력된 값이 한글인지 확인합니다.
      * 
-     * @return boolean 값 반환 true, false
+     * @return 해당 글자가 한글인지 확인 후 boolean 값 반환
      * 
      * @created 2024-12-23
      * @lastModified 2024-12-23

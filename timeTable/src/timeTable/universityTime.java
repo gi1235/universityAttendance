@@ -33,6 +33,7 @@ public class universityTime {
         this.credit = credit;
     }
 
+
     public String getName(){
         return name;
     }
