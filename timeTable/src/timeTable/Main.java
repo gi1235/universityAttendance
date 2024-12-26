@@ -118,11 +118,11 @@ public class Main {
     }
 
     /**
-     * 현재 시간표에 저장된 학점을 검사합니다.
+     * 현재 시간표에 저장된 총학점을 검사합니다.
      * 
      * @param cnt 학점을 저장
      * 
-     * @return 현재 시간표의 학점
+     * @return 현재 시간표의 총학점
      * 
      * @created 2024-12-26
      * @lastModified 2024-12-26
