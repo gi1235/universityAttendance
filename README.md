@@ -15,10 +15,10 @@
 # 프로그램 수행 절차
 
 ## 다이어그램
-![aa](https://github.com/user-attachments/assets/7edafd01-de8a-46b7-8c15-1b895f57313d)
+![2](https://github.com/user-attachments/assets/c3492fdc-5a1a-4721-bb52-1d4c01fe1241)
 
 ## 클래스 다이어그램
-![p1](https://github.com/user-attachments/assets/7e77f7f8-cdb5-4e48-a1b3-e46d9190244b)
+![aa](https://github.com/user-attachments/assets/7edafd01-de8a-46b7-8c15-1b895f57313d)
 
 
 # 사용 방법
